@@ -19,13 +19,12 @@ struct LoginView: View {
                 .scaledToFit()
                 .frame(width: 220, height: 100)
             
-            VStack{
+            VStack(spacing: 12){
                 TextField("Enter your email", text: $email)
                     .autocapitalization(.none)
                     .modifier(IGTextFieldModifier())
                 
-                SecureField("Enter your password", text: $password)
-                    .modifier(IGTextFieldModifier())
+                SecureFieldWithButton("Enter your password", text: $password)
             }
             
             Button{
@@ -44,6 +43,7 @@ struct LoginView: View {
                     .stroke(Color("buttonTextColor"), lineWidth: 1)
             )
             .padding(.horizontal, 24)
+            .padding(.top, 12)
             
             
             Button {
